@@ -19,7 +19,7 @@ namespace NmmInfo.Models
         public double ABV { get; set; }
 
         [Required]
-        [Range(0.0, 100.0, ErrorMessage = "IBV must be between 0.0 and 20.0")]
+        [Range(0.0, 100.0, ErrorMessage = "IBV must be between 0.0 and 100.0")]
         public double IBU { get; set; }
     }
 }

@@ -1,9 +1,6 @@
 namespace NmmInfo.Migrations
 {
-    using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<NmmInfo.Models.ApplicationDbContext>
     {
@@ -14,10 +11,22 @@ namespace NmmInfo.Migrations
 
         protected override void Seed(NmmInfo.Models.ApplicationDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
+            context.beers.AddOrUpdate(b => b.Name,
+                new Models.Beer()
+                {
+                    Name = "Ida's IPA",
+                    Type = Models.BeerType.IPA,
+                    ABV = 5.6,
+                    IBU = 20
+                },
+                new Models.Beer()
+                {
+                    Name = "Paul's Porter",
+                    Type = Models.BeerType.Porter,
+                    ABV = 4.6,
+                    IBU = 40
+                }
+            );
         }
     }
 }
