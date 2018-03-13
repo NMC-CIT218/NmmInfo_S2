@@ -17,6 +17,9 @@ namespace NmmInfo.Models
             return userIdentity;
         }
 
+        //
+        // extending the ApplicationUser class with more properties
+        //
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
