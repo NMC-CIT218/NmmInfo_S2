@@ -28,7 +28,7 @@ namespace NmmInfo.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("NmmInfo_S2", throwIfV1Schema: false)
+            : base("NmmInfo_S2_remote", throwIfV1Schema: false)
         {
         }
 
